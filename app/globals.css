@@ -1,6 +1,147 @@
 @import "tailwindcss";
 
-:root {
+/* ===================================
+   🌍 AB-Tech Design Tokens
+=================================== */
+@layer base {
+  :root {
+    --primary: 37 99 235; /* blue-600 */
+    --secondary: 139 92 246; /* purple-500 */
+    --accent: 236 72 153; /* pink-500 */
+    --dark: 2 6 23; /* slate-950 */
+  }
+
+  body {
+    @apply bg-slate-950 text-white antialiased;
+  }
+}
+
+/* ===================================
+   🧱 Global Typography
+=================================== */
+@layer base {
+  h1 {
+    @apply text-4xl md:text-6xl font-extrabold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  p {
+    @apply text-gray-400 leading-relaxed;
+  }
+}
+
+/* ===================================
+   🧩 UI Components
+=================================== */
+@layer components {
+  /* Primary Button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+      px-6 py-3 rounded-lg font-medium
+      bg-blue-600 text-white
+      hover:bg-blue-700
+      transition-all duration-200
+      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+      px-6 py-3 rounded-lg font-medium
+      border border-gray-600 text-gray-300
+      hover:border-blue-500 hover:text-blue-400
+      transition-all duration-200;
+  }
+
+  /* Ghost Button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+      px-6 py-3 rounded-lg font-medium
+      text-gray-300 hover:text-blue-400
+      transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  @keyframes logo-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-logo-scroll {
+    animation: logo-scroll 25s linear infinite;
+  }
+}
+
+/* Futuristic glow */
+.glow-blue {
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+}
+
+/* Animated connector glow */
+svg path {
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+}
+
+/* Floating globe */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.neon-link {
+  position: relative;
+  display: inline-block;
+}
+
+.neon-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+}
+
+.neon-link:hover::after {
+  width: 100%;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +164,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
