@@ -34,54 +34,20 @@ const services: Service[] = [
     description:
       "User-focused interfaces designed for clarity, flow, and everyday usability across every touchpoint.",
     image:
-      "https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=680&q=80&auto=format&fit=crop",
+      "https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg",
     imageAlt: "UX designer sketching wireframes and user flows on paper",
     accent: "violet",
   },
   {
-    id: "landing-pages",
+    id: "Mobile App Development",
     number: "03",
-    title: "Landing Pages",
+    title: "Mobile App Development",
     description:
-      "High-converting pages crafted to capture attention and drive action from the very first scroll.",
+      "Native and cross-platform mobile applications built for performance and seamless user experience.",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=680&q=80&auto=format&fit=crop",
+      "https://coredevsltd.com/Service/Asset/MobileApplicationDevelopment.jpeg",
     imageAlt: "Analytics dashboard on a laptop showing conversion metrics",
     accent: "emerald",
-  },
-  {
-    id: "product-design",
-    number: "04",
-    title: "Product Design",
-    description:
-      "End-to-end product design focused on usability, growth, and design system consistency.",
-    image:
-      "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=680&q=80&auto=format&fit=crop",
-    imageAlt: "Product designer working on a mobile app interface on tablet",
-    accent: "amber",
-  },
-  {
-    id: "content-strategy",
-    number: "05",
-    title: "Content Strategy",
-    description:
-      "Content plans structured to guide messaging, clarity, and sustained audience engagement.",
-    image:
-      "https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=680&q=80&auto=format&fit=crop",
-    imageAlt:
-      "Content planning session with sticky notes and strategy documents",
-    accent: "rose",
-  },
-  {
-    id: "framer-dev",
-    number: "06",
-    title: "Framer Development",
-    description:
-      "Pixel-perfect Framer builds with smooth motion, clean structure, and zero-compromise quality.",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=680&q=80&auto=format&fit=crop",
-    imageAlt: "Developer coding a web application on a dark screen setup",
-    accent: "cyan",
   },
 ];
 
@@ -156,10 +122,10 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
         ].join(" ")}
       >
         {/* Top shimmer line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-700 to-transparent group-hover:via-white/80 dark:group-hover:via-zinc-400 transition-all duration-500 z-10" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-zinc-200 dark:via-zinc-700 to-transparent group-hover:via-white/80 dark:group-hover:via-zinc-400 transition-all duration-500 z-10" />
 
         {/* ── Image block ───────────────────────────────────── */}
-        <div className="relative w-full aspect-[16/10] overflow-hidden">
+        <div className="relative w-full aspect-16/10 overflow-hidden">
           {/* Skeleton shimmer while loading */}
           {!imgLoaded && (
             <div className="absolute inset-0 animate-pulse bg-zinc-100 dark:bg-zinc-800" />

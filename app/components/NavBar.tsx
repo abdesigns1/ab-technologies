@@ -71,8 +71,8 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 py-7 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold">
-          <span className="text-gray-900 dark:text-white">AB</span>
-          <span className="text-blue-600">Technologies</span>
+          <span className="text-gray-900 dark:text-white">ABNIXX</span>
+          <span className="text-blue-600">Tech</span>
         </Link>
 
         {/* Desktop Menu */}

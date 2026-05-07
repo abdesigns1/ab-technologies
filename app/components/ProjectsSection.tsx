@@ -61,20 +61,6 @@ const projects: Project[] = [
     kickoff: "Jan 20, 2023",
     accent: "#f59e0b",
   },
-  {
-    id: "lumecorp",
-    number: "04",
-    name: "Lumecorp",
-    description:
-      "A bold brand identity system and design language built for a fast-scaling SaaS company with global ambitions.",
-    image:
-      "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=1400&q=85&auto=format&fit=crop",
-    imageAlt: "Lumecorp project – vibrant gradient brand colours",
-    timeline: "6 Weeks",
-    service: "Web Design",
-    kickoff: "Mar 10, 2024",
-    accent: "#10b981",
-  },
 ];
 
 // ─── Arrow Icon ───────────────────────────────────────────────────────────────
@@ -374,7 +360,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* ── Footer CTA ─────────────────────────────────── */}
-        <div className="px-4 sm:px-6 lg:px-8 pb-24">
+        {/* <div className="px-4 sm:px-6 lg:px-8 pb-24">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm">
             <div>
               <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
@@ -390,7 +376,7 @@ export default function ProjectsSection() {
               <ArrowIcon className="w-4 h-4" />
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

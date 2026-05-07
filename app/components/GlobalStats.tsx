@@ -22,7 +22,7 @@ export default function GlobalStats() {
   if (!mounted) return null;
 
   return (
-    <section className="relative py-36 overflow-hidden bg-gradient-to-b from-blue-50 via-white to-gray-50 dark:from-[#020617] dark:via-[#020617] dark:to-black transition-colors duration-300">
+    <section className="relative py-36 overflow-hidden bg-linear-to-b from-blue-50 via-white to-gray-50 dark:from-[#020617] dark:via-[#020617] dark:to-black transition-colors duration-300">
       <GlobeBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
@@ -77,7 +77,7 @@ export default function GlobalStats() {
                 <div className="absolute inset-0 bg-blue-400/20 dark:bg-blue-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Stat Number */}
-                <h3 className="relative text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 bg-clip-text text-transparent">
+                <h3 className="relative text-4xl md:text-5xl font-extrabold bg-linear-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 bg-clip-text text-transparent">
                   <CountUp
                     end={stat.value}
                     duration={3}
@@ -98,7 +98,7 @@ export default function GlobalStats() {
         </div>
 
         {/* Decorative bottom gradient line */}
-        <div className="mt-24 h-px bg-gradient-to-r from-transparent via-blue-600/30 dark:via-blue-500/30 to-transparent" />
+        <div className="mt-24 h-px bg-linear-to-r from-transparent via-blue-600/30 dark:via-blue-500/30 to-transparent" />
       </div>
     </section>
   );

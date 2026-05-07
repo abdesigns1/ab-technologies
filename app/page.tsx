@@ -9,6 +9,8 @@ import OurWorks from "./components/OurWorks";
 import Services from "./components/Services";
 import FAQ from "./components/FAQ";
 import ProjectsSection from "./components/ProjectsSection";
+import WhatWeOffer from "./components/WhatWeOffer";
+import CounterSection from "./components/CounterSection";
 
 export default function Home() {
   return (
@@ -19,7 +21,7 @@ export default function Home() {
         <WhoWeAre />
         <Services />
         <ProjectsSection />
-        <GlobalStats />
+        <CounterSection />
         <CallToAction />
         <Testimonials />
         <FAQ />

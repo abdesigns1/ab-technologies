@@ -4,12 +4,13 @@ import ServicesProcess from "../components/services/ServicesProcess";
 import ServicesCTA from "../components/services/ServicesCTA";
 import Services from "../components/Services";
 import CallToAction from "../components/CallToAction";
+import FullServices from "./FullServices";
 
 export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
-      <Services />
+      <FullServices />
       <ServicesProcess />
       <CallToAction />
     </>

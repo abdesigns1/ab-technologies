@@ -57,7 +57,7 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-3 text-lg font-medium">
-              {["Home", "Services", "Works", "About", "Contact"].map((item) => (
+              {["Home", "Services", "About", "Contact", "FAQs"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
@@ -87,7 +87,7 @@ export default function Footer() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-linear-to-r from-blue-600 to-purple-600 font-semibold hover:scale-105 transition-transform"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-linear-to-r from-blue-600 to-blue-400 font-semibold hover:scale-105 transition-transform"
             >
               Start a Project →
             </Link>

@@ -12,6 +12,9 @@ const HeroSection = () => {
         <div className="absolute bottom-0 right-0 w-600px h-600px bg-purple-500/10 rounded-full blur-3xl" />
       </div>
 
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]" />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
@@ -23,7 +26,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold text-slate-900 dark:text-white mb-6">
               Building Inteligent
               <span className="block text-transparent bg-linear-to-r from-blue-600 to-blue-300 bg-clip-text">
                 Digital Experiences
