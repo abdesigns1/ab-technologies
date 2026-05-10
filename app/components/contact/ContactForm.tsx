@@ -50,10 +50,10 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="group relative w-full overflow-hidden rounded-lg bg-indigo-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-500"
+          className="group relative w-full overflow-hidden rounded-lg bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-500"
         >
           <span className="relative z-10">Send Message</span>
-          <span className="absolute inset-0 bg-linear-to-r from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-100 transition" />
+          <span className="absolute inset-0 bg-linear-to-r from-black-400 to-black-500 opacity-0 group-hover:opacity-100 transition" />
         </button>
       </form>
     </motion.div>

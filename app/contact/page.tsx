@@ -24,7 +24,7 @@ export default function ContactPage() {
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
             Let’s Build Something <br />
-            <span className="text-indigo-400">Remarkable</span>
+            <span className="text-blue-400">Remarkable</span>
           </h1>
 
           <p className="mt-6 text-gray-400 max-w-lg">

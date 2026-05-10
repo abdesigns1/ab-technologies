@@ -21,9 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ab-Tech",
+  title: "Abnixx Tech - Innovative Technology Solutions for Businesses",
   description:
-    "ab-Tech is a leading technology company specializing in innovative solutions for businesses. We provide cutting-edge software development, IT consulting, and digital transformation services to help our clients stay ahead in the competitive market. Our team of experts is dedicated to delivering high-quality products and exceptional customer service, ensuring that our clients achieve their goals and drive growth. With a focus on innovation and excellence, ab-Tech is your trusted partner for all your technology needs.",
+    "Abnixx Tech is a leading technology company specializing in innovative solutions for businesses. We provide cutting-edge software development, IT consulting, and digital transformation services to help our clients stay ahead in the competitive market. Our team of experts is dedicated to delivering high-quality products and exceptional customer service, ensuring that our clients achieve their goals and drive growth. With a focus on innovation and excellence, ab-Tech is your trusted partner for all your technology needs.",
 };
 
 export default function RootLayout({

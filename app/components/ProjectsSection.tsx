@@ -19,47 +19,43 @@ interface Project {
 // ─── Projects Data ────────────────────────────────────────────────────────────
 const projects: Project[] = [
   {
-    id: "vireonix",
+    id: "Scent AI",
     number: "01",
-    name: "Vireonix",
+    name: "Scent AI",
     description:
-      "A content-driven website structured to improve messaging clarity, user understanding, and engagement flow across every touchpoint.",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1400&q=85&auto=format&fit=crop",
-    imageAlt: "Vireonix project – abstract digital art with glowing shapes",
+      "Scent AI is an AI-Powered Perfume E-commerce Project where the AI assistant interacts with users, asks about their scent preferences (floral, woody, fresh, etc.), and recommends perfumes tailored to their personality and taste. ",
+    image: "/images/scentai.jpg",
+    imageAlt: "Scent AI project – abstract digital art with glowing shapes",
     timeline: "5 Weeks",
-    service: "Content Strategy",
-    kickoff: "Jun 4, 2024",
-    accent: "#6366f1",
+    service: "Web and AI Design",
+    kickoff: "March 5, 2026",
+    accent: "#FFD700",
   },
   {
-    id: "fluxoria",
+    id: "Mobile Banking UI Design",
     number: "02",
-    name: "Fluxoria",
+    name: "Mobile Banking UI Design",
     description:
-      "A focused, conversion-driven landing page designed to capture attention and highlight product value from the very first scroll.",
-    image:
-      "https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=1400&q=85&auto=format&fit=crop",
-    imageAlt: "Fluxoria project – deep blue glowing wave abstract",
+      "This Mobile Banking app is designed to help ease transaction accross all banking platform and also to sold the problem of slow transaction, this app helps users to spend on budget and have archieve a good financial goal.",
+    image: "/images/Banking 2.png",
+    imageAlt: "Mobile Banking UI Design project",
     timeline: "3 Weeks",
     service: "UI/UX Design",
-    kickoff: "Sep 24, 2025",
-    accent: "#06b6d4",
+    kickoff: "Sep 24, 2024",
+    accent: "#50C878",
   },
   {
-    id: "novastra",
+    id: "AIMEN Online",
     number: "03",
-    name: "Novastra",
+    name: "AIMEN Online",
     description:
-      "A modern product-focused website presenting features clearly while supporting scalability, clarity, and future product expansion.",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85&auto=format&fit=crop",
-    imageAlt:
-      "Novastra project – geometric product interface on dark background",
+      "Africa-Israel Media Network, AIMEN is a project that seeks to bridge gap, bolster the good relationships between the continent and Israel through accurate reportage, advocacy, exchanges between relevant media organizations between the two sides.",
+    image: "/images/aimen1.jpg",
+    imageAlt: "AIMEN Online project",
     timeline: "4 Weeks",
-    service: "Product Design",
-    kickoff: "Jan 20, 2023",
-    accent: "#f59e0b",
+    service: "Website Design and Development",
+    kickoff: "September, 2025",
+    accent: "#0041BA",
   },
 ];
 
@@ -159,7 +155,7 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
 
           <div className="flex flex-col lg:flex-row">
             {/* ── Image panel ───────────────────────────────── */}
-            <div className="relative w-full lg:w-[55%] aspect-[16/10] lg:aspect-auto lg:min-h-[420px] overflow-hidden flex-shrink-0">
+            <div className="relative w-full lg:w-[55%] aspect-16/10 lg:aspect-auto lg:min-h-420px overflow-hidden shrink-0">
               <img
                 src={project.image}
                 alt={project.imageAlt}
@@ -211,14 +207,14 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
               {/* CTA */}
               <div className="mt-10">
                 <button
-                  className="group/btn inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 border"
+                  className="group/btn inline-flex items-center gap-3 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 border"
                   style={{
                     borderColor: `${project.accent}60`,
                     color: hovered ? "#fff" : project.accent,
                     background: hovered ? project.accent : "transparent",
                   }}
                 >
-                  Project details
+                  View project
                   <span
                     className="w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300"
                     style={{

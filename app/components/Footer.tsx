@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { X, Camera } from "lucide-react";
+import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
 
 export default function Footer() {
   return (
@@ -38,7 +39,7 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl font-extrabold tracking-tight">
-              AB<span className="text-blue-500">-Tech</span>
+              ABNIXX<span className="text-blue-500">-Tech</span>
             </h2>
             <p className="mt-4 text-gray-400 max-w-sm">
               We design and build intelligent digital experiences that help
@@ -99,9 +100,17 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} AB-Tech. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ABNIXX Tech. All rights reserved.</p>
 
-          <p className="tracking-wide">Crafted with precision & code ⚡</p>
+          <p className="tracking-wide">
+            <Link href="/privacy-policy" className="hover:text-blue-400">
+              Privacy Policy
+            </Link>
+            |{" "}
+            <Link href="/terms-of-service" className="hover:text-blue-400">
+              Terms of Service
+            </Link>
+          </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -109,8 +118,10 @@ export default function Footer() {
             className="flex gap-6"
           >
             {[
-              { icon: X, href: "#" },
-              { icon: Camera, href: "#" },
+              { icon: BsInstagram, href: "#" },
+              { icon: BsTwitter, href: "#" },
+              { icon: BsWhatsapp, href: "#" },
+              { icon: BsFacebook, href: "#" },
             ].map(({ icon: Icon, href }, index) => (
               <motion.a
                 key={index}

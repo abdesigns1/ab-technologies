@@ -6,7 +6,7 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What services does AB-Tech offer?",
+    question: "What services does ABNIXX Tech offer?",
     answer:
       "We specialize in Web Development, UI/UX Design, Branding & Graphics, Mobile Applications, and scalable digital solutions tailored for modern businesses.",
   },
@@ -38,9 +38,12 @@ export default function FAQ() {
 
   return (
     <section className="relative py-32 bg-slate-950 text-white overflow-hidden">
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]" />
+
       {/* Background Glows */}
       <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full" />
-      <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-purple-500/20 blur-[140px] rounded-full" />
+      <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-blue-500/20 blur-[140px] rounded-full" />
 
       <div className="relative max-w-4xl mx-auto px-6">
         {/* Header */}
@@ -58,8 +61,8 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="mt-6 text-gray-400 max-w-xl mx-auto">
-            Everything you need to know about working with AB-Tech and how we
-            deliver cutting-edge digital solutions.
+            Everything you need to know about working with ABNIXX Tech and how
+            we deliver cutting-edge digital solutions.
           </p>
         </motion.div>
 

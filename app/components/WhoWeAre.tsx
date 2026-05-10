@@ -38,8 +38,8 @@ export default function WhoWeAre() {
           </h2>
 
           <p className="mt-8 text-gray-400 leading-relaxed max-w-xl">
-            At <span className="text-white font-semibold">AB-Tech</span>, we are
-            a forward-thinking technology company driven by innovation,
+            At <span className="text-white font-semibold">ABNIXX Tech</span>, we
+            are a forward-thinking technology company driven by innovation,
             precision, and purpose.
           </p>
 

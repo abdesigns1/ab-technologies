@@ -13,10 +13,10 @@ export default function Testimonials() {
           😊 Our Testimonials
         </span>
         <h2 className="text-4xl font-extrabold text-slate-900">
-          User Reviews and Feedback
+          Our Clients Reviews and Feedback
         </h2>
         <p className="mt-4 text-slate-500">
-          See how AB-Tech has transformed digital experiences through the voices
+          See how ABNIXX has transformed digital experiences through the voices
           of our clients.
         </p>
       </div>

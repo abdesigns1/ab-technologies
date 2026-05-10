@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Service {
@@ -36,7 +37,7 @@ const services: Service[] = [
     image:
       "https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149052117.jpg",
     imageAlt: "UX designer sketching wireframes and user flows on paper",
-    accent: "violet",
+    accent: "blue",
   },
   {
     id: "Mobile App Development",
@@ -47,7 +48,7 @@ const services: Service[] = [
     image:
       "https://coredevsltd.com/Service/Asset/MobileApplicationDevelopment.jpeg",
     imageAlt: "Analytics dashboard on a laptop showing conversion metrics",
-    accent: "emerald",
+    accent: "blue",
   },
 ];
 
@@ -262,7 +263,7 @@ export default function ServicesSection() {
           className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         >
           {/* Background decorations */}
-          <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+          {/* <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pulse-ring bg-zinc-300 dark:bg-zinc-700" />
             <div className="absolute -top-20 -right-24 w-80 h-80 rounded-full bg-violet-100/50 dark:bg-violet-900/10 blur-3xl" />
             <div className="absolute -bottom-20 -left-24 w-80 h-80 rounded-full bg-blue-100/50 dark:bg-blue-900/10 blur-3xl" />
@@ -284,7 +285,7 @@ export default function ServicesSection() {
               </defs>
               <rect width="100%" height="100%" fill="url(#dots)" />
             </svg>
-          </div>
+          </div> */}
 
           <div className="relative max-w-6xl mx-auto">
             {/* ── Header ─────────────────────────────────────── */}
@@ -342,18 +343,20 @@ export default function ServicesSection() {
                   exceptional together.
                 </p>
               </div>
-              <button className="shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105 hover:shadow-lg hover:shadow-zinc-900/20 dark:hover:shadow-white/20 active:scale-95">
-                Explore all services
-                <svg className="w-4 h-4" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M2 12 L12 2 M12 2 H5 M12 2 V9"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              <Link href="/services">
+                <button className="shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105 hover:shadow-lg hover:shadow-zinc-900/20 dark:hover:shadow-white/20 active:scale-95 cursor-pointer">
+                  Explore all services
+                  <svg className="w-4 h-4" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 12 L12 2 M12 2 H5 M12 2 V9"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </Link>
             </div>
           </div>
         </section>

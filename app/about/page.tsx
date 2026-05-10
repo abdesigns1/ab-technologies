@@ -25,13 +25,13 @@ export default function AboutPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 dark:from-blue-500/30 dark:via-purple-500/30 dark:to-pink-500/30 rounded-full blur-3xl"
+            className="absolute top-0 left-1/4 w-96 h-96 bg-linear-to-br from-blue-500/20 via-blue-500/20 to-blue-500/20 dark:from-blue-500/30 dark:via-blue-500/30 dark:to-blue-500/30 rounded-full blur-3xl"
           />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.3 }}
-            className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-indigo-500/20 via-cyan-500/20 to-teal-500/20 dark:from-indigo-500/30 dark:via-cyan-500/30 dark:to-teal-500/30 rounded-full blur-3xl"
+            className="absolute bottom-0 right-1/4 w-500px h-500px bg-linear-to-tl from-indigo-500/20 via-cyan-500/20 to-teal-500/20 dark:from-indigo-500/30 dark:via-cyan-500/30 dark:to-teal-500/30 rounded-full blur-3xl"
           />
         </div>
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              About AB-Tech
+              About ABNIXX Tech
             </span>
           </motion.div>
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
               Crafting Digital
             </span>
             <br />
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-600 via-blue-400 to-blue-600 dark:from-blue-400 dark:via-blue-400 dark:to-blue-400">
               Experiences That Matter
             </span>
           </motion.h1>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed"
           >
             We're a digital-first agency obsessed with building products that
-            don't just look good—they solve real problems, scale effortlessly,
+            don't just look good, they solve real problems, scale effortlessly,
             and create meaningful connections between brands and people.
           </motion.p>
 
@@ -89,25 +89,25 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-12 flex items-center justify-center gap-4"
           >
-            <div className="flex -space-x-4">
+            {/* <div className="flex -space-x-4">
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="w-12 h-12 rounded-full border-2 border-white dark:border-zinc-950 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold"
+                  className="w-12 h-12 rounded-full border-2 border-white dark:border-zinc-950 bg-linear-to-br from-blue-500 to-blue-300 flex items-center justify-center text-white font-bold"
                   style={{ zIndex: 10 - i }}
                 >
                   {i}
                 </div>
               ))}
-            </div>
-            <div className="text-left">
+            </div> */}
+            {/* <div className="text-left">
               <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                 50+ Projects Delivered
               </p>
               <p className="text-xs text-zinc-500 dark:text-zinc-500">
                 Trusted by startups & enterprises
               </p>
-            </div>
+            </div> */}
           </motion.div>
         </motion.div>
 
@@ -132,6 +132,7 @@ export default function AboutPage() {
       <section className="relative py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* TEXT CONTENT */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -141,6 +142,7 @@ export default function AboutPage() {
               <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider uppercase mb-4 block">
                 Our Story
               </span>
+
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 Born from a belief that{" "}
                 <span className="italic text-blue-600 dark:text-blue-400">
@@ -148,50 +150,38 @@ export default function AboutPage() {
                 </span>{" "}
                 drives business growth
               </h2>
+
               <div className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 <p>
-                  AB-Tech started with a simple observation: too many businesses
-                  were settling for digital products that looked good but didn't
-                  perform. Beautiful interfaces with broken user journeys.
-                  Websites that didn't convert. Apps that users abandoned.
+                  ABNIXX Tech started with a simple observation: too many
+                  businesses were settling for digital products that looked good
+                  but didn't perform. Beautiful interfaces with broken user
+                  journeys. Websites that didn't convert. Apps that users
+                  abandoned.
                 </p>
+
                 <p>
-                  We knew there was a better way—one that married strategic
+                  We knew there was a better way, one that married strategic
                   thinking, thoughtful design, and robust engineering. So we
                   built a team of people who care deeply about craft, obsess
                   over details, and measure success by real-world impact.
                 </p>
+
                 <p className="font-semibold text-zinc-900 dark:text-zinc-100">
                   Today, we're proud to partner with ambitious teams who want to
                   build products that actually work.
                 </p>
               </div>
 
+              {/* STATS */}
               <div className="mt-10 grid grid-cols-3 gap-6">
-                {[
-                  { label: "Years", value: "5+" },
-                  { label: "Projects", value: "50+" },
-                  { label: "Team Members", value: "12+" },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-zinc-500 dark:text-zinc-500 mt-1">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
+                <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer">
+                  Learn More
+                </button>
               </div>
             </motion.div>
 
-            {/* Visual Element */}
+            {/* STOCK IMAGE */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -199,57 +189,12 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative aspect-square rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30">
-                {/* Decorative Grid */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]" />
-
-                {/* Floating Cards */}
-                <motion.div
-                  animate={{
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-1/4 left-1/4 w-32 h-32 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-800 p-4 flex items-center justify-center"
-                >
-                  <span className="text-4xl">🎨</span>
-                </motion.div>
-
-                <motion.div
-                  animate={{
-                    y: [0, 20, 0],
-                    rotate: [0, -5, 0],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.5,
-                  }}
-                  className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-800 p-4 flex items-center justify-center"
-                >
-                  <span className="text-4xl">⚡</span>
-                </motion.div>
-
-                <motion.div
-                  animate={{
-                    y: [0, -15, 0],
-                    x: [0, 10, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                  className="absolute top-1/2 right-1/3 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl shadow-xl flex items-center justify-center text-white text-3xl"
-                >
-                  💎
-                </motion.div>
+              <div className="aspect-square rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-lg">
+                <img
+                  src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg"
+                  alt="Team collaboration"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>

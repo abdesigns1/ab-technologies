@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, TrendingUp, Users, Shield } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -22,7 +23,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>Trusted by 500+ Companies</span>
+              <span>Welcome to ABNIXX Tech</span>
             </div>
 
             {/* Main Heading */}
@@ -35,7 +36,7 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-              ab-Tech delivers scalable software solutions, modern web
+              ABNIXX Tech delivers scalable software solutions, modern web
               platforms, and AI-powered products that help businesses innovate
               faster.
             </p>

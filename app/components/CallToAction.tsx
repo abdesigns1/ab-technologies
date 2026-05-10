@@ -49,7 +49,7 @@ export default function CallToAction() {
           {/* Description */}
           <p className="mt-6 max-w-2xl mx-auto text-gray-300">
             Whether you're launching a product, scaling a platform, or
-            reimagining your digital presence — AB-Tech is ready to engineer
+            reimagining your digital presence, ABNIXX Tech is ready to engineer
             solutions that move you ahead.
           </p>
 
