@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -31,30 +32,41 @@ export default function Navbar() {
 
   // Check for user's preferred color scheme and localStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
+    const syncTheme = () => {
+      const savedTheme = localStorage.getItem("theme");
+      const shouldUseDarkMode =
+        savedTheme === "dark" || (!savedTheme && mediaQuery.matches);
+
+      setIsDarkMode(shouldUseDarkMode);
+      document.documentElement.classList.toggle("dark", shouldUseDarkMode);
+      document.documentElement.style.colorScheme = shouldUseDarkMode
+        ? "dark"
+        : "light";
+    };
+
+    syncTheme();
+    mediaQuery.addEventListener("change", syncTheme);
+
+    return () => mediaQuery.removeEventListener("change", syncTheme);
   }, []);
 
   // Toggle dark mode
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
+    const nextIsDarkMode = !isDarkMode;
+
+    setIsDarkMode(nextIsDarkMode);
+    if (nextIsDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+    document.documentElement.style.colorScheme = nextIsDarkMode
+      ? "dark"
+      : "light";
   };
 
   return (
@@ -70,9 +82,15 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 py-7 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold">
-          <span className="text-gray-900 dark:text-white">ABNIXX</span>
-          <span className="text-blue-600">Tech</span>
+        <Link href="/" className="block" aria-label="ABNIXX Tech home">
+          <Image
+            src="/ABNIXX%20Logo%20Frame%20222.png"
+            alt="ABNIXX Tech"
+            width={1723}
+            height={466}
+            priority
+            className="h-11 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}

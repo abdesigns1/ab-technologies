@@ -1,10 +1,44 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles, TrendingUp, Users, Shield } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
+
+const heroSlides = [
+  {
+    src: "/images/Hero Image.png",
+    alt: "AI product interface preview",
+  },
+  {
+    src: "/images/Lady laptop.png",
+    alt: "Digital product dashboard preview",
+  },
+  {
+    src: "/images/AI2.png",
+    alt: "UI and UX design preview",
+  },
+  {
+    src: "/images/desktop-mockup.png",
+    alt: "Desktop software mockup preview",
+  },
+  {
+    src: "/images/mobile app.png",
+    alt: "Mobile application preview",
+  },
+];
 
 const HeroSection = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const slideTimer = window.setInterval(() => {
+      setActiveSlide((currentSlide) => (currentSlide + 1) % heroSlides.length);
+    }, 3500);
+
+    return () => window.clearInterval(slideTimer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 pt-45 lg:pt-32">
       {/* Background decorative elements */}
@@ -62,15 +96,25 @@ const HeroSection = () => {
 
           {/* Right Content - Standalone Image */}
           <div className="relative lg:block">
-            <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px]">
-              <Image
-                src="/images/Hero Image.png"
-                alt="SaaS Dashboard Preview"
-                fill
-                className="object-contain object-center drop-shadow-2xl"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+            <div
+              className="relative h-[400px] w-full md:h-[500px] lg:h-[550px]"
+              aria-live="polite"
+            >
+              {heroSlides.map((slide, index) => (
+                <Image
+                  key={slide.src}
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className={`object-contain object-center drop-shadow-2xl transition-all duration-1000 ease-out ${
+                    activeSlide === index
+                      ? "scale-100 opacity-100"
+                      : "scale-95 opacity-0"
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Floating Elements */}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import { Space_Grotesk } from "next/font/google";
@@ -26,16 +27,34 @@ export const metadata: Metadata = {
     "Abnixx Tech is a leading technology company specializing in innovative solutions for businesses. We provide cutting-edge software development, IT consulting, and digital transformation services to help our clients stay ahead in the competitive market. Our team of experts is dedicated to delivering high-quality products and exceptional customer service, ensuring that our clients achieve their goals and drive growth. With a focus on innovation and excellence, ab-Tech is your trusted partner for all your technology needs.",
 };
 
+const themeScript = `
+  (function () {
+    try {
+      var savedTheme = window.localStorage.getItem("theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var shouldUseDarkMode = savedTheme === "dark" || (!savedTheme && prefersDark);
+
+      document.documentElement.classList.toggle("dark", shouldUseDarkMode);
+      document.documentElement.style.colorScheme = shouldUseDarkMode ? "dark" : "light";
+    } catch (_) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${spaceGrotesk.className}`}
       >
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
         <Navbar />
         {children}
         <Footer />
