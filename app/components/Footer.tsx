@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { X, Camera } from "lucide-react";
 import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
 
 export default function Footer() {
@@ -38,9 +38,15 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-extrabold tracking-tight">
-              ABNIXX<span className="text-blue-500">-Tech</span>
-            </h2>
+            <Link href="/" className="inline-block" aria-label="ABNIXX Tech home">
+              <Image
+                src="/ABNIXX%20Logo%20Frame%20222.png"
+                alt="ABNIXX Tech"
+                width={1723}
+                height={466}
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
             <p className="mt-4 text-gray-400 max-w-sm">
               We design and build intelligent digital experiences that help
               brands grow, scale, and dominate the future.
@@ -78,6 +84,34 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-5"
           >
+            <div className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+              <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                Newsletter
+              </h4>
+              <p className="mt-3 text-sm leading-6 text-gray-400">
+                Get practical notes on design, AI, web products, and digital
+                growth.
+              </p>
+              <form className="mt-5 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+                <label htmlFor="footer-email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="footer-email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  className="min-w-0 flex-1 rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-500 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20"
+                />
+                <button
+                  type="submit"
+                  className="rounded-lg bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-blue-500 hover:text-white"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
             <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
               Let’s Build
             </h4>

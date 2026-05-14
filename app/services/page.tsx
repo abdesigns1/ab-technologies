@@ -1,8 +1,6 @@
 import ServicesHero from "../components/services/ServicesHero";
-import ServicesGrid from "../components/services/ServicesGrid";
 import ServicesProcess from "../components/services/ServicesProcess";
-import ServicesCTA from "../components/services/ServicesCTA";
-import Services from "../components/Services";
+import TechStack from "../components/services/TechStack";
 import CallToAction from "../components/CallToAction";
 import FullServices from "./FullServices";
 
@@ -12,6 +10,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <FullServices />
       <ServicesProcess />
+      <TechStack />
       <CallToAction />
     </>
   );
