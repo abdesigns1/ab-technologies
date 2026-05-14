@@ -9,6 +9,14 @@ import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const navigationLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "FAQs", href: "/faqs" },
+];
+
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterError, setNewsletterError] = useState("");
@@ -129,13 +137,13 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-3 text-lg font-medium">
-              {["Home", "Services", "About", "Contact", "FAQs"].map((item) => (
-                <li key={item}>
+              {navigationLinks.map((item) => (
+                <li key={item.label}>
                   <Link
-                    href={`/${item.toLowerCase()}`}
+                    href={item.href}
                     className="transition neon-link hover:text-blue-400"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
