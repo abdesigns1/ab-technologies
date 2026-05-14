@@ -18,7 +18,7 @@ const services: Service[] = [
   {
     id: "web-design",
     number: "01",
-    title: "Web Design",
+    title: "Website Development",
     description:
       "Modern responsive websites designed to scale with growing businesses and evolving product needs.",
     image:
@@ -61,23 +61,23 @@ const services: Service[] = [
     accent: "amber",
   },
   {
-    id: "content-strategy",
+    id: "Tech Consultation & Advisory",
     number: "05",
-    title: "Content Strategy",
+    title: "Tech Consultation & Advisory",
     description:
-      "Content plans structured to guide messaging, clarity, and sustained audience engagement.",
+      "Expert guidance to help you navigate the complexities of modern technology and make informed decisions.",
     image:
       "https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=680&q=80&auto=format&fit=crop",
     imageAlt:
-      "Content planning session with sticky notes and strategy documents",
+      "Tech consultation session with professionals and strategy documents",
     accent: "rose",
   },
   {
     id: "framer-dev",
     number: "06",
-    title: "Framer Development",
+    title: "Technical Writing & Tech Blogging",
     description:
-      "Pixel-perfect Framer builds with smooth motion, clean structure, and zero-compromise quality.",
+      "Well-researched, well-written technical content that educates and engages your audience.",
     image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=680&q=80&auto=format&fit=crop",
     imageAlt: "Developer coding a web application on a dark screen setup",

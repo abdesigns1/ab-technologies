@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "./components/NavBar";
 import { Space_Grotesk } from "next/font/google";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

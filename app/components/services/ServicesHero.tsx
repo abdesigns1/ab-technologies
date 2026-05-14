@@ -75,7 +75,7 @@ export default function ServicesHero() {
         </motion.p>
 
         {/* Optional: Add CTA buttons for better engagement */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -96,14 +96,14 @@ export default function ServicesHero() {
           >
             Learn More
           </motion.button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

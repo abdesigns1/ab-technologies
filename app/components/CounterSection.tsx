@@ -12,9 +12,9 @@ const stats = [
     description: "Websites, dashboards, AI tools, and full-stack apps.",
   },
   {
-    value: 3,
+    value: 4,
     suffix: "+",
-    label: "Years Experience",
+    label: "Years and still counting",
     description: "Web development, UI/UX, and digital product design.",
   },
   {

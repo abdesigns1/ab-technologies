@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const heroSlides = [
@@ -40,7 +41,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 pt-45 lg:pt-32">
+    <section className="relative overflow-hidden bg-linear-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 pt-45 pb-24 lg:pt-32">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-800px h-800px bg-blue-500/10 rounded-full blur-3xl" />
@@ -48,9 +49,9 @@ const HeroSection = () => {
       </div>
 
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)]" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
@@ -78,15 +79,15 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <Link
-                href="/get-started"
-                className="group inline-flex items-center justify-center gap-2 bg-linear-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30"
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-2 bg-linear-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 cursor-pointer"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
-                href="/demo"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-xl font-semibold border border-slate-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-blue-600 transition-colors"
               >
                 Explore Solutions
@@ -123,6 +124,22 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-12 left-1/2 z-10 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-zinc-300 dark:border-zinc-700 rounded-full p-1"
+        >
+          <motion.div className="w-1.5 h-1.5 bg-zinc-900 dark:bg-zinc-100 rounded-full mx-auto" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Project {
@@ -14,6 +15,7 @@ interface Project {
   service: string;
   kickoff: string;
   accent: string;
+  projectUrl: string;
 }
 
 // ─── Projects Data ────────────────────────────────────────────────────────────
@@ -30,6 +32,7 @@ const projects: Project[] = [
     service: "Web and AI Design",
     kickoff: "March 5, 2026",
     accent: "#FFD700",
+    projectUrl: "https://scent-ai-eta.vercel.app/",
   },
   {
     id: "Mobile Banking UI Design",
@@ -43,6 +46,8 @@ const projects: Project[] = [
     service: "UI/UX Design",
     kickoff: "Sep 24, 2024",
     accent: "#50C878",
+    projectUrl:
+      "https://www.behance.net/gallery/185078707/Mobile-Banking-User-Interface",
   },
   {
     id: "AIMEN Online",
@@ -56,6 +61,7 @@ const projects: Project[] = [
     service: "Website Design and Development",
     kickoff: "September, 2025",
     accent: "#0041BA",
+    projectUrl: "https://aimen.online/",
   },
 ];
 
@@ -122,6 +128,7 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
   const opacity = isLastCard ? 1 : 1 - progress * 0.3;
   // Slight upward drift as it gets stacked under
   const translateY = isLastCard ? 0 : -progress * 24;
+  const isExternalProjectUrl = /^https?:\/\//.test(project.projectUrl);
 
   return (
     <div
@@ -206,13 +213,17 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
 
               {/* CTA */}
               <div className="mt-10">
-                <button
+                <Link
+                  href={project.projectUrl}
+                  target={isExternalProjectUrl ? "_blank" : undefined}
+                  rel={isExternalProjectUrl ? "noreferrer" : undefined}
                   className="group/btn inline-flex items-center gap-3 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 border"
                   style={{
                     borderColor: `${project.accent}60`,
                     color: hovered ? "#fff" : project.accent,
                     background: hovered ? project.accent : "transparent",
                   }}
+                  aria-label={`View ${project.name} project`}
                 >
                   View project
                   <span
@@ -225,7 +236,7 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
                   >
                     <ArrowIcon className="w-3 h-3 transition-transform duration-300 group-hover/btn:rotate-45" />
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
