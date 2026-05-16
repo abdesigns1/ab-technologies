@@ -1,24 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
 import CallToAction from "../components/CallToAction";
 
 export default function AboutPage() {
-  const [mounted, setMounted] = useState(false);
   const { scrollYProgress } = useScroll();
   const headerOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-500">
+    <main className="min-h-screen overflow-hidden bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-500">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+      <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:pt-28">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -61,7 +54,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight"
+            className="mb-8 text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl md:text-7xl lg:text-7xl"
           >
             <span className="bg-clip-text text-transparent bg-linear-to-r from-zinc-900 via-zinc-700 to-zinc-900 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-100">
               Crafting Digital
@@ -76,11 +69,12 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed"
+            className="mx-auto max-w-3xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-lg md:text-xl"
           >
-            We're a digital-first agency obsessed with building products that
-            don't just look good, they solve real problems, scale effortlessly,
-            and create meaningful connections between brands and people.
+            We&apos;re a digital-first agency obsessed with building products
+            that don&apos;t just look good, they solve real problems, scale
+            effortlessly, and create meaningful connections between brands and
+            people.
           </motion.p>
 
           <motion.div
@@ -129,21 +123,22 @@ export default function AboutPage() {
       </section>
 
       {/* OUR STORY */}
-      <section className="relative py-32 px-6">
+      <section className="relative px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* TEXT CONTENT */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="text-center lg:text-left"
             >
               <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider uppercase mb-4 block">
                 Our Story
               </span>
 
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <h2 className="mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
                 Born from a belief that{" "}
                 <span className="italic text-blue-600 dark:text-blue-400">
                   great design
@@ -155,8 +150,8 @@ export default function AboutPage() {
                 <p>
                   ABNIXX Tech started with a simple observation: too many
                   businesses were settling for digital products that looked good
-                  but didn't perform. Beautiful interfaces with broken user
-                  journeys. Websites that didn't convert. Apps that users
+                  but didn&apos;t perform. Beautiful interfaces with broken user
+                  journeys. Websites that didn&apos;t convert. Apps that users
                   abandoned.
                 </p>
 
@@ -168,13 +163,13 @@ export default function AboutPage() {
                 </p>
 
                 <p className="font-semibold text-zinc-900 dark:text-zinc-100">
-                  Today, we're proud to partner with ambitious teams who want to
-                  build products that actually work.
+                  Today, we&apos;re proud to partner with ambitious teams who
+                  want to build products that actually work.
                 </p>
               </div>
 
               {/* STATS */}
-              <div className="mt-10 grid grid-cols-3 gap-6">
+              <div className="mt-10 flex justify-center lg:justify-start">
                 <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer">
                   Learn More
                 </button>
@@ -189,11 +184,13 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-lg">
-                <img
-                  src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg"
-                  alt="Team collaboration"
-                  className="w-full h-full object-cover"
+              <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-2xl border border-zinc-200 shadow-lg dark:border-zinc-800 lg:max-w-none lg:rounded-3xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1758691737124-05c5bffe46f0?auto=format&fit=crop&q=80&w=1400"
+                  alt="Team collaborating around a laptop with AI-assisted tools"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </motion.div>
@@ -202,28 +199,28 @@ export default function AboutPage() {
       </section>
 
       {/* OUR VALUES */}
-      <section className="relative py-32 px-6 bg-zinc-50 dark:bg-zinc-900/50">
+      <section className="relative px-4 py-20 bg-zinc-50 dark:bg-zinc-900/50 sm:px-6 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-12 text-center sm:mb-16"
           >
             <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider uppercase mb-4 block">
               Our Values
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="mb-6 text-3xl font-bold sm:text-4xl md:text-5xl">
               What Drives Us Every Day
             </h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-              These aren't just words on a wall—they're the principles that
-              guide every decision, design, and line of code.
+            <p className="mx-auto max-w-2xl text-base text-zinc-600 dark:text-zinc-400 sm:text-lg">
+              These aren&apos;t just words on a wall, they&apos;re the
+              principles that guide every decision, design, and line of code.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {[
               {
                 icon: "🎯",
@@ -276,7 +273,7 @@ export default function AboutPage() {
                     background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
                   }}
                 />
-                <div className="h-full bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-8 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 hover:shadow-2xl">
+                <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-zinc-300 hover:shadow-2xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 sm:p-8">
                   <div
                     className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center text-2xl mb-6 shadow-lg`}
                   >
@@ -296,24 +293,24 @@ export default function AboutPage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section className="relative py-32 px-6">
+      <section className="relative px-4 py-20 sm:px-6 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="mb-14 text-center sm:mb-20"
           >
             <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wider uppercase mb-4 block">
               Our Process
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="mb-6 text-3xl font-bold sm:text-4xl md:text-5xl">
               How We Bring Ideas to Life
             </h2>
           </motion.div>
 
-          <div className="space-y-24">
+          <div className="space-y-16 sm:space-y-20 lg:space-y-24">
             {[
               {
                 num: "01",
@@ -346,21 +343,21 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex flex-col lg:flex-row items-start gap-12"
+                className="flex flex-col items-center gap-6 text-center lg:flex-row lg:items-start lg:gap-12 lg:text-left"
               >
                 <div className="flex-shrink-0">
-                  <div className="text-7xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
+                  <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 sm:text-7xl md:text-8xl">
                     {step.num}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">
+                  <h3 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-zinc-100 md:text-3xl">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                  <p className="mb-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-lg">
                     {step.desc}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
                     {step.tags.map((tag, j) => (
                       <span
                         key={j}

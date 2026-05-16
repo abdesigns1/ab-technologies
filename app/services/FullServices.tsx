@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -166,12 +167,14 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
           )}
 
           {/* Real photo */}
-          <img
+          <Image
             src={service.image}
             alt={service.imageAlt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             onLoad={() => setImgLoaded(true)}
             className={[
-              "w-full h-full object-cover transition-all duration-700",
+              "object-cover transition-all duration-700",
               "group-hover:scale-105",
               imgLoaded ? "opacity-100" : "opacity-0",
             ].join(" ")}
@@ -239,7 +242,6 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
 
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export default function ServicesSection() {
-  const [isDark, setIsDark] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -272,10 +274,6 @@ export default function ServicesSection() {
     if (headerRef.current) observer.observe(headerRef.current);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
 
   return (
     <>

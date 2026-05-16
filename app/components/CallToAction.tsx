@@ -40,7 +40,7 @@ export default function CallToAction() {
 
           {/* Headline */}
           <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
-            Let's Turn Your Idea <br />
+            Let&apos;s Turn Your Idea <br />
             <span className="text-blue-500 glow-blue">
               Into Intelligent Technology
             </span>
@@ -48,7 +48,7 @@ export default function CallToAction() {
 
           {/* Description */}
           <p className="mt-6 max-w-2xl mx-auto text-gray-300">
-            Whether you're launching a product, scaling a platform, or
+            Whether you&apos;re launching a product, scaling a platform, or
             reimagining your digital presence, ABNIXX Tech is ready to engineer
             solutions that move you ahead.
           </p>

@@ -154,7 +154,7 @@ const WhatWeOffer = () => {
             <motion.div
               key={index}
               //   variants={cardVariants}
-              whileHover={{ y: -10 } as any}
+              whileHover={{ y: -10 }}
               className="group relative"
             >
               {/* Card Glow Effect */}

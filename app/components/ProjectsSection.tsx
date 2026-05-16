@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
@@ -163,10 +164,12 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
           <div className="flex flex-col lg:flex-row">
             {/* ── Image panel ───────────────────────────────── */}
             <div className="relative w-full lg:w-[55%] aspect-16/10 lg:aspect-auto lg:min-h-420px overflow-hidden shrink-0">
-              <img
+              <Image
                 src={project.image}
                 alt={project.imageAlt}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Bottom scrim */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-white/0 dark:lg:to-zinc-900/0" />
@@ -248,13 +251,8 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
 
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export default function ProjectsSection() {
-  const [isDark, setIsDark] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
