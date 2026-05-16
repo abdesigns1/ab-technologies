@@ -8,7 +8,7 @@ const contactHighlights = [
   {
     icon: Mail,
     label: "Email us",
-    value: "hello@abtech.dev",
+    value: "abnixxtech@gmail.com",
     note: "For projects, partnerships, and general enquiries.",
   },
   {

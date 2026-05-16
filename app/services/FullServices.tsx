@@ -362,33 +362,6 @@ export default function ServicesSection() {
                 />
               ))}
             </div>
-
-            {/* ── Bottom CTA ─────────────────────────────────── */}
-            <div
-              className={`mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl transition-all duration-700 delay-[750ms] border border-zinc-200/80 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            >
-              <div>
-                <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                  Ready to get started?
-                </p>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
-                  Book a free discovery call and let's build something
-                  exceptional together.
-                </p>
-              </div>
-              <button className="shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105 hover:shadow-lg hover:shadow-zinc-900/20 dark:hover:shadow-white/20 active:scale-95">
-                Explore all services
-                <svg className="w-4 h-4" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M2 12 L12 2 M12 2 H5 M12 2 V9"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
           </div>
         </section>
       </div>
