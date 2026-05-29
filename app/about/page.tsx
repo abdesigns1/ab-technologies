@@ -2,6 +2,14 @@
 
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  Handshake,
+  Lightbulb,
+  Rocket,
+  Sprout,
+  Target,
+  TrendingUp,
+} from "lucide-react";
 import CallToAction from "../components/CallToAction";
 
 export default function AboutPage() {
@@ -223,71 +231,67 @@ export default function AboutPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {[
               {
-                icon: "🎯",
+                icon: Target,
                 title: "Clarity Over Complexity",
                 desc: "We believe the best solutions are often the simplest. We cut through noise and confusion to deliver experiences that just make sense.",
-                color: "from-blue-500 to-cyan-500",
               },
               {
-                icon: "🚀",
+                icon: Rocket,
                 title: "Speed Meets Quality",
                 desc: "Moving fast doesn't mean cutting corners. We ship quickly without sacrificing the craft and attention to detail that makes great products.",
-                color: "from-purple-500 to-pink-500",
               },
               {
-                icon: "💡",
+                icon: Lightbulb,
                 title: "Design with Intent",
                 desc: "Every pixel, interaction, and animation exists for a reason. We don't design for awards—we design to solve problems and delight users.",
-                color: "from-orange-500 to-red-500",
               },
               {
-                icon: "🌱",
+                icon: Sprout,
                 title: "Built to Scale",
                 desc: "Today's MVP is tomorrow's enterprise platform. We architect systems that grow with your ambitions, not against them.",
-                color: "from-green-500 to-emerald-500",
               },
               {
-                icon: "🤝",
+                icon: Handshake,
                 title: "Partnership Over Transactions",
                 desc: "We don't just take briefs—we become an extension of your team. Your wins are our wins, and we're invested in your long-term success.",
-                color: "from-indigo-500 to-purple-500",
               },
               {
-                icon: "📈",
+                icon: TrendingUp,
                 title: "Impact Over Output",
                 desc: "We measure success by outcomes, not deliverables. Beautiful mockups mean nothing if they don't move the needle for your business.",
-                color: "from-pink-500 to-rose-500",
               },
-            ].map((value, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative"
-              >
-                <div
-                  className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl -z-10"
-                  style={{
-                    background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
-                  }}
-                />
-                <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-zinc-300 hover:shadow-2xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 sm:p-8">
+            ].map((value, i) => {
+              const Icon = value.icon;
+
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
                   <div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center text-2xl mb-6 shadow-lg`}
-                  >
-                    {value.icon}
+                    className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl -z-10"
+                    style={{
+                      background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
+                    }}
+                  />
+                  <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-zinc-300 hover:shadow-2xl dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 sm:p-8">
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-lg">
+                      <Icon className="h-7 w-7" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-zinc-100">
+                      {value.title}
+                    </h3>
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      {value.desc}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-zinc-900 dark:text-zinc-100">
-                    {value.title}
-                  </h3>
-                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                    {value.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
