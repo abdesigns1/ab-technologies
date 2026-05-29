@@ -131,6 +131,11 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    console.error("Resend contact email failed", {
+      name: error.name,
+      message: error.message,
+    });
+
     return Response.json(
       { error: "Unable to send your message right now." },
       { status: 502 },
