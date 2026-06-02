@@ -15,6 +15,8 @@ const navLinks = [
   { name: "Blog", href: "/blog" },
 ];
 
+const demoBookingUrl = "https://calendly.com/abnixxtech";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -80,7 +82,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-7 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 pt-7 pb-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="block" aria-label="ABNIXX Tech home">
           <Image
@@ -123,7 +125,7 @@ export default function Navbar() {
         </ul>
 
         {/* Right side buttons */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
@@ -140,6 +142,15 @@ export default function Navbar() {
           >
             Get Started
           </Link>
+
+          <a
+            href={demoBookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-950/40 transition"
+          >
+            Book a Demo
+          </a>
         </div>
 
         {/* Mobile Button and Dark Mode Toggle */}
@@ -197,6 +208,17 @@ export default function Navbar() {
                 >
                   Get Started
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={demoBookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="block text-center px-5 py-2 rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-950/40 transition"
+                >
+                  Book a Demo
+                </a>
               </li>
             </ul>
           </motion.div>

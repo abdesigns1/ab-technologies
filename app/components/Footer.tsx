@@ -233,7 +233,7 @@ export default function Footer() {
             </p>
 
             <Link
-              href="/contact"
+              href="/get-started"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-linear-to-r from-blue-600 to-blue-400 font-semibold hover:scale-105 transition-transform"
             >
               Start a Project →

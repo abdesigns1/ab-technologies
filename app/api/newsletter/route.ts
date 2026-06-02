@@ -78,6 +78,11 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    console.error("Resend newsletter email failed", {
+      name: error.name,
+      message: error.message,
+    });
+
     return Response.json(
       { error: "Unable to subscribe right now." },
       { status: 502 },
